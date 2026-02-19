@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"os"
 )
 
@@ -15,6 +16,11 @@ func main() {
 	fmt.Println("file: ", filename)
 }
 
-func run(filename string) {
-
+func process(filename string) {
+	// convert file into byte slice
+	byteSlice, err := os.ReadFile(filename)
+	if err != nil {
+		log.Fatalf("trouble reading file", err)
+	}
+	fmt.Println("byteslice:", byteSlice)
 }
