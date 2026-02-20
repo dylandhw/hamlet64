@@ -71,3 +71,12 @@ input="$1"
 bin=$(echo -n "$input" | xxd -b -c1 | awk '{print $2}' | tr -d '\n')
 pad=$(( (6 - ${#bin}%6)%6 ))
 bin=$(printf "%s%0*d" "$bin" "$pad" 0)
+
+output=""
+for ((i=0; i<${#bin}; i+=6)); do
+  chunk=${bin:i:6}
+  dec=$((2#$chunk))
+  output+="${quotes[$dec]}"
+done
+
+echo "$output"
