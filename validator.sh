@@ -65,3 +65,9 @@ quotes=(
     "Were kisses all the joys in bed"
     "One woman would another wed."
 )
+
+
+input="$1"
+bin=$(echo -n "$input" | xxd -b -c1 | awk '{print $2}' | tr -d '\n')
+pad=$(( (6 - ${#bin}%6)%6 ))
+bin=$(printf "%s%0*d" "$bin" "$pad" 0)
