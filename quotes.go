@@ -60,10 +60,15 @@ var quotes = []string{
 	"Too little care of this",
 	"The skies look grimly",
 	"And threaten present blusters",
-	"",
-	"",
-	"",
-	"",
+	"Let me be that I am",
+	"And seek not to alter me",
+	"What’s past is prologue",
+	"We know what we are",
+	"I had rather hear my dog bark at a crow than a man swear he loves me",
+	"This above all - to thine own self be true",
+	"We are such stuff as dreams are made on",
+	"Were kisses all the joys in bed",
+	"One woman would another wed.",
 }
 
 func count() {
