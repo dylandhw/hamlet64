@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 // this does not need to be its own file but i dont like looking at long walls of quote text
 // going to spend a bit of time finding fav quotes
 var quotes = []string{
@@ -29,4 +31,8 @@ var quotes = []string{
 	"There is no following her in this fierce vein",
 	"I would my father look'd but with my eyes.",
 	"It is a wise father that knows his own child",
+}
+
+func count() {
+	fmt.Printf("count of quotes: %d", len(quotes))
 }
