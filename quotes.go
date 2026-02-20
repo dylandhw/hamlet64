@@ -11,4 +11,11 @@ var quotes = []string{
 	"I am sick when I do look on thee",
 	"I do desire we may be better strangers",
 	"There’s no more faith in thee than in a stewed prune",
+	"To be, or not to be, that is the question",
+	"All the world's a stage",
+	"And all the men and women merely players",
+	"The web of our life is of a mingled yarn, good and ill together",
+	"I love long life better than figs",
+	"This tiger-footed rage",
+	"Come not between the dragon and his wrath!",
 }
