@@ -31,7 +31,7 @@ func process(filename string) {
 	}
 	fmt.Println("byteslice:", byteSlice)
 
-	encode(byteSlice)
+	fmt.Println(encode(byteSlice))
 }
 
 func encode(byteSlice []byte) string {
