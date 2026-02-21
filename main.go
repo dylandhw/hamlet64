@@ -31,10 +31,16 @@ func process(filename string) {
 }
 
 func encode(byteSlice []byte) string {
+	bitString := bytesToBitString(byteSlice)
+}
+
+func bytesToBitString(byteSlice []byte) string {
 	var builder strings.Builder
 
 	// iterate through every byte in the byte slice
 	for _, b := range byteSlice { 
 		builder.WriteString(fmt.Sprintf("%08b"), b)
 	}
+
+	return builder.String()
 }
