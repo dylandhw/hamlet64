@@ -5,6 +5,7 @@ import (
 	"log"
 	"os"
 	"strings"
+	"strconv"
 )
 
 var totalPadding = 0
@@ -37,7 +38,26 @@ func encode(byteSlice []byte) string {
 	bitString := bytesToBitString(byteSlice)
 
 	paddedBitString := padBitString(bitString)
-	return paddedBitString
+
+	var encodedOutput string
+
+	// split padded bit string into 6-bit chunks
+	for i := 0; i < len(paddedBitString); i += 6 {
+		end := i + 6
+
+		if end > len(paddedBitString){
+			end = len(paddedBitString)
+		}
+
+		sixBitChunk := paddedBitString[i:end]
+		// convert to int 
+		index, _ := strconv.ParseInt(sixBitChunk, 2, 8)
+		// map to quote
+		encodedOutput += quotes [int(index)] + "\n"
+	}
+
+
+	return encodedOutput
 }
 
 func bytesToBitString(byteSlice []byte) string {
