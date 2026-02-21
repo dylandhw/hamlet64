@@ -37,7 +37,7 @@ func encode(byteSlice []byte) string {
 	bitString := bytesToBitString(byteSlice)
 
 	paddedBitString := padBitString(bitString)
-
+	return paddedBitString
 }
 
 func bytesToBitString(byteSlice []byte) string {
@@ -53,9 +53,9 @@ func bytesToBitString(byteSlice []byte) string {
 
 func padBitString(bitString string) string {
 	paddingNeeded := (6 - (len(bitString) % 6)) % 6
-	totalPadding += paddedNeeded 
+	totalPadding += paddingNeeded 
 
-	bitString.Repeat("0", paddingNeeded)
+	bitString += strings.Repeat("0", paddingNeeded)
 
 	return bitString
 }
