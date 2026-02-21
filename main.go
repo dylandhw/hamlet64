@@ -36,7 +36,8 @@ func process(filename string) {
 func encode(byteSlice []byte) string {
 	bitString := bytesToBitString(byteSlice)
 
-	padBitString(bitString)
+	paddedBitString := padBitString(bitString)
+
 }
 
 func bytesToBitString(byteSlice []byte) string {
@@ -52,4 +53,8 @@ func bytesToBitString(byteSlice []byte) string {
 
 func padBitString(bitString string){
 	paddedNeeded = (6 - (len(bitString) % 6)) % 6
+	totalPadding += paddedNeeded 
+
+
+
 }
