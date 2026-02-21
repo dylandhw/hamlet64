@@ -7,6 +7,9 @@ import (
 	"strings"
 )
 
+var totalPadding := 0
+
+
 func main() {
 	if len(os.Args) != 2 {
 		fmt.Println("usage: hamlet64 <filename>")
@@ -32,6 +35,8 @@ func process(filename string) {
 
 func encode(byteSlice []byte) string {
 	bitString := bytesToBitString(byteSlice)
+
+	padBitString(bitString)
 }
 
 func bytesToBitString(byteSlice []byte) string {
@@ -39,8 +44,12 @@ func bytesToBitString(byteSlice []byte) string {
 
 	// iterate through every byte in the byte slice
 	for _, b := range byteSlice { 
-		builder.WriteString(fmt.Sprintf("%08b"), b)
+		builder.WriteString(fmt.Sprintf("%08b", b))
 	}
 
 	return builder.String()
+}
+
+func padBitString(bitString string){
+	paddedNeeded = (6 - (len(bitString) % 6)) % 6
 }
