@@ -7,7 +7,7 @@ import (
 	"strings"
 )
 
-var totalPadding := 0
+var totalPadding = 0
 
 
 func main() {
@@ -51,10 +51,11 @@ func bytesToBitString(byteSlice []byte) string {
 	return builder.String()
 }
 
-func padBitString(bitString string){
-	paddedNeeded = (6 - (len(bitString) % 6)) % 6
+func padBitString(bitString string) string {
+	paddingNeeded := (6 - (len(bitString) % 6)) % 6
 	totalPadding += paddedNeeded 
 
+	bitString.Repeat("0", paddingNeeded)
 
-
+	return bitString
 }
