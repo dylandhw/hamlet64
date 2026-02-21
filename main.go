@@ -14,6 +14,7 @@ func main() {
 
 	filename := os.Args[1]
 	fmt.Println("file: ", filename)
+
 	process(filename)
 }
 
@@ -24,4 +25,10 @@ func process(filename string) {
 		log.Fatalf("trouble reading file: %v", err)
 	}
 	fmt.Println("byteslice:", byteSlice)
+
+	encode(byteSlice)
+}
+
+func encode(byteSlice []byte) string {
+
 }
