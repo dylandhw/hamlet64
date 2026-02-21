@@ -51,7 +51,7 @@ func encode(byteSlice []byte) string {
 
 		sixBitChunk := paddedBitString[i:end]
 		// convert to int 
-		index, _ := strconv.ParseInt(sixBitChunk, 2, 8)
+		index,_ := strconv.ParseInt(sixBitChunk, 2, 8)
 		// map to quote
 		encodedOutput += quotes [int(index)] + "\n"
 	}
